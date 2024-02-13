@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="h-full">
-      <Welcome />
+    <main className="h-full grid grid-cols-2 ">
+      <Welcome className=""/>
       <SearchList className=""/>
     </main>
   );
