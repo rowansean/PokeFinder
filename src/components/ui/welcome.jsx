@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Welcome({className}) {
   return (
-    <div className={`${className} mt-[100px]  text-center text-white`}>
+    <div className={`${className} self-center text-center text-white`}>
       <h1 className='text text-4xl font-bold '>Welcome to</h1>
       <div className="flex w-full overflow-hidden">
         <img src="/PokeBall.png" alt="placeholder" className=' w-16 h-16' />
