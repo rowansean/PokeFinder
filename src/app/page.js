@@ -10,10 +10,10 @@ export default function Home() {
   const [pokemonList, setPokemonList] = useState([]);
   const [featuredPokemon, setFeaturedPokemon] = useState(null);
 
+  // Fetch the pokemon data from the API
   useEffect(() => {
     async function fetchPokemon() {
       const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=500");
-      console.log("fetch made");
       const data = await res.json();
       setPokemonList(data.results); // Update the state with the fetched pokemon
     }

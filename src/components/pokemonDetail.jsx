@@ -81,19 +81,19 @@ export default function PokemonDetail({ featuredPokemon }) {
       </Avatar>
 
       <Card className='bg-[#d13a3ad9] w-80 h-72 border-none p-4 shadow-inner overflow overflow-y-auto'>
-          <CardTitle 
-            className="text-white capitalize m-1 flex gap-2">
-            {pokemonDetails.name}
-            <Volume2 className='text-slate-100' onClick={playCry}/>
-          </CardTitle>
-          {pokemonDetails.types.map((type, index) => (
-            <Badge 
-              key={index}
-              className={`${typeColors[type.type.name] || 'bg-gray-500'} text-black text-xs capitalize m-1`}>
-              {type.type.name}
-            </Badge>
-          ))}
-          <div className='text-black text-left'>
+        <CardTitle 
+          className="text-white capitalize m-1 flex gap-2">
+          {pokemonDetails.name}
+          <Volume2 className='text-slate-100' onClick={playCry}/>
+        </CardTitle>
+        {pokemonDetails.types.map((type, index) => (
+          <Badge 
+            key={index}
+            className={`${typeColors[type.type.name] || 'bg-gray-500'} text-black text-xs capitalize m-1`}>
+            {type.type.name}
+          </Badge>
+        ))}
+        <div className='text-black text-left'>
           <h3 className='text-lg font-semibold'>Base Stats</h3>
           <div className='bg-[#ffffff] shadow-inner rounded-md p-4'>
             <ul className='list-outside text-sm'>
@@ -111,8 +111,7 @@ export default function PokemonDetail({ featuredPokemon }) {
               ))}
             </ul>
           </div>
-</div>
-
+        </div>
       </Card>
     </div>
   );
