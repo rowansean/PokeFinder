@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className="flex flex-col max-h-full md:grid md:grid-cols-2">
       { featuredPokemon ?
-        <PokemonDetail />
+        <PokemonDetail featuredPokemon={featuredPokemon}/>
         : <Welcome className=""/>
       }
       <SearchList className="" pokemonList={pokemonList} setFeaturedPokemon={setFeaturedPokemon}/>

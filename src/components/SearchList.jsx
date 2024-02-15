@@ -44,9 +44,9 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
                             src=""
                             alt={pokemon.name}
                             />
-                        <AvatarFallback>PK</AvatarFallback>
+                        <AvatarFallback className="uppercase">{pokemon.name.charAt(0) + pokemon.name.charAt(1)}</AvatarFallback>
                     </Avatar>
-                    <h3 className="text-xl ">{pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h3>
+                    <h3 className="text-xl capitalize">{pokemon.name}</h3>
                     <Badge className="text-xs bg-slate-600 h-fit">{pokemon.type}</Badge>
                 </Card>
             ))}
