@@ -71,11 +71,11 @@ export default function PokemonDetail({ featuredPokemon }) {
 
   return (
     <div className='flex flex-col max-h-full items-center gap-4'>
-      <Avatar className='size-36 shadow-xl'>
+      <Avatar className='size-36 shadow-xl '>
         <AvatarImage 
           src={pokemonDetails.sprites.front_shiny}
           alt={pokemonDetails.name}
-          className='rounded-full bg-[#d13a3ad9] size-36 border-4 border-amber-500'
+          className='rounded-full backdrop-blur-sm bg-white/30 size-36 border-4 border-amber-500'
         />
         <AvatarFallback>{pokemonDetails.id}</AvatarFallback>
       </Avatar>
