@@ -1,3 +1,4 @@
+import Logo from "@/components/ui/logo";
 import "./globals.css";
 import {
   Card,
@@ -18,7 +19,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="h-screen w-screen flex justify-center items-center">
-        <Card className="h-[500px] w-[800px] bg-red-500 border border-black border-4 shadow-2xl">
+        <Logo className="fixed top-16 left-1/2 scale-150" />
+        <Card className="h-[500px] w-[800px] bg-red-500 border-black border-4 shadow-2xl">
           <CardContent className="h-full">
             {children}
           </CardContent>
