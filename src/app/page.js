@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Welcome from "@/components/ui/welcome";
+import Welcome from "@/components/welcome";
 import PokemonDetail from "@/components/PokemonDetail";
 import SearchList from "@/components/SearchList";
 
