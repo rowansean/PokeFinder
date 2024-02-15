@@ -25,7 +25,7 @@ To run Pokefinder locally on your machine, follow these steps:
 2. Navigate into the cloned directory:
 
    ```bash
-   cd pokefinder
+   cd pokefinder-app
    ```
 
 3. Install the dependencies using npm or yarn:
