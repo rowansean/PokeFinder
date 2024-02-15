@@ -8,9 +8,11 @@ Pokefinder is an application aimed at replicating the functionality of the Poké
 
 ## Features
 
-- Browse a comprehensive database of Pokémon species
+- Browse a comprehensive list of Pokémon species
 - Search for specific Pokémon by name or type
 - View detailed information about each Pokémon, including stats, abilities, types, and evolutions
+- Listen to each Pokemon's cry by clicking the speaker icon
+- View a random Pokemon by clicking the shuffle button
 
 ## Installation
 
