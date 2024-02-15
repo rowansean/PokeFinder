@@ -75,7 +75,7 @@ export default function PokemonDetail({ featuredPokemon }) {
         <AvatarImage 
           src={pokemonDetails.sprites.front_shiny}
           alt={pokemonDetails.name}
-          className='rounded-full bg-[#d13a3ad9] size-36 border-4 border-amber-500'
+          className='rounded-full bg-[#d17272d9] size-36 border-4 border-amber-500'
         />
         <AvatarFallback>{pokemonDetails.id}</AvatarFallback>
       </Avatar>
