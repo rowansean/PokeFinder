@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Input } from "@/components/ui/input"
 import { Card } from "./ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -40,14 +41,17 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
         <Input className="w-full h-14 mb-1 shadow-inner " placeholder="Search..." onChange={handleSearch} />
         <Shuffle className="self-end text-white" onClick={handleShuffle}/>
         <div className="flex flex-col gap-4">
+
             {/* If filtered pokemon is empty return h1 saying no results found */}
             {filteredPokemon.length === 0 && <h1 className="text-center text-white">No results found. Boooo!</h1>}
+
             {/* Map through filtered pokemon and display them */}
             {filteredPokemon.slice(0,5).map(pokemon => (
                 <Card 
                     key={pokemon.name} 
                     onClick={() => handlePokemonClick(pokemon)}
                     className="p-2 flex justify-between items-center shadow-lg hover:scale-105 hover:shadow-xl">
+
                     <Avatar className="size size-8">
                         <AvatarImage 
                             src=""
@@ -55,10 +59,13 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
                             />
                         <AvatarFallback className="uppercase">{pokemon.name.charAt(0) + pokemon.name.charAt(1)}</AvatarFallback>
                     </Avatar>
+
                     <h3 className="text-xl capitalize">{pokemon.name}</h3>
-                    <Badge className="text-xs bg-slate-600 h-fit">{pokemon.type}</Badge>
+                    
+                    <Image className="size-6" src="/pokeball.png" alt="pokeball" width={20} height={20}/>
                 </Card>
             ))}
+
         </div>
     </div>
   )
