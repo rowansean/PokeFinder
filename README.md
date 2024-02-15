@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 # Pokefinder
 
-![Pokefinder UI Screenshot](/path/to/screenshot.png)
+![Pokefinder UI Screenshot](/public/UI.png)
 
 Pokefinder is an application aimed at replicating the functionality of the Pokédex from Pokémon games and TV series. It allows users to browse and search for information on various Pokémon species, including their stats, abilities, types, and more. The application is built using Next.js, React, Tailwind CSS, Shadcn UI, and Lucide-React for icons.
 
