@@ -1,4 +1,3 @@
-import React from 'react';
 import { Badge } from './ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import {
@@ -12,24 +11,21 @@ import {
 
 export default function PokemonDetail() {
   return (
-    <div className='h-full flex flex-col content-center gap-5 items-center justify-center'>
-      <Avatar className='size-36'>
-        <AvatarImage src='https://github.com/shadcn.png' />
+    <div className='flex flex-col gap-2 content-center h-full items-center justify-center'>
+      <Avatar className='size-24 md:size-36'>
+        <AvatarImage src='' />
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
 
-      <Card className='bg-[#c63939] w-72 h-full border-none'>
-        <CardHeader className=''>
+      <Card className='bg-[#c63939] w-80 border-none p-6'>
           <CardTitle>Pokemon Details</CardTitle>
           <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
           <Badge>Secondary</Badge>
           <Badge>Secondary</Badge>
           <div className='text-black'>
             <h3 className='text-lg font-semibold'>Base Stats</h3>
             <div className='bg-[#ffffff] rounded-md p-4'>
-              <ul className='space-y-2'>
+              <ul className=''>
                 <li>
                   <span className='font-bold'>HP:</span> 100
                 </li>
@@ -51,10 +47,6 @@ export default function PokemonDetail() {
               </ul>
             </div>
           </div>
-        </CardContent>
-        <CardFooter>
-          <p></p>
-        </CardFooter>
       </Card>
     </div>
   );
