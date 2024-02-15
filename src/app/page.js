@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import Welcome from "@/components/ui/welcome";
+import PokemonDetail from "@/components/PokemonDetail";
 import SearchList from "@/components/SearchList";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
   return (
     <main className="flex flex-col md:grid md:grid-cols-2 ">
       { featuredPokemon ?
-        <h1>Pokemon Detail Component Goes Here</h1>
+        <PokemonDetail />
         : <Welcome className=""/>
       }
       <SearchList className="" pokemonList={pokemonList} setFeaturedPokemon={setFeaturedPokemon}/>
