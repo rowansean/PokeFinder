@@ -32,7 +32,7 @@ const typeColors = {
   ghost: 'bg-indigo-800', // Deep indigo for a mysterious vibe
   ice: 'bg-cyan-400', // Cool, icy blue
   dragon: 'bg-indigo-700', // A majestic, dark blue or purple
-  dark: 'bg-gray-800', // Very dark gray for dark type
+  dark: 'bg-gray-700', // Very dark gray for dark type
   steel: 'bg-gray-500', // Metallic gray
   flying: 'bg-blue-300', // Light sky blue
 };
@@ -49,13 +49,13 @@ export default function PokemonDetail({ featuredPokemon }) {
     stats: [],
   });
 
+  async function fetchPokemonDetails() {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${featuredPokemon.name}`);
+    const data = await res.json();
+    setPokemonDetails(data);
+  }
+
   useEffect(() => {
-    
-    async function fetchPokemonDetails() {
-      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${featuredPokemon.name}`);
-      const data = await res.json();
-      setPokemonDetails(data);
-    }
 
     if (featuredPokemon) {
       fetchPokemonDetails();

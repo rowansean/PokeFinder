@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     async function fetchPokemon() {
-      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=151");
+      const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=500");
       console.log("fetch made");
       const data = await res.json();
       setPokemonList(data.results); // Update the state with the fetched pokemon

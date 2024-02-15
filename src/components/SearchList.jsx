@@ -40,9 +40,9 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
         <Input className="w-full h-14 mb-1 shadow-inner " placeholder="Search..." onChange={handleSearch} />
         <Shuffle className="self-end text-white" onClick={handleShuffle}/>
         <div className="flex flex-col gap-4">
-            {/* for pokemon in pokemon */}
             {/* If filtered pokemon is empty return h1 saying no results found */}
             {filteredPokemon.length === 0 && <h1 className="text-center text-white">No results found. Boooo!</h1>}
+            {/* Map through filtered pokemon and display them */}
             {filteredPokemon.slice(0,5).map(pokemon => (
                 <Card 
                     key={pokemon.name} 
