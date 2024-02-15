@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Pokefinder
+# Welcome to Pokefinder!
 
 <img src="/public/UI.gif" alt="Pokefinder UI Screenshot" width="800">
 
