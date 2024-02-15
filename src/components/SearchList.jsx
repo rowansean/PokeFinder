@@ -38,8 +38,11 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
 
   return (
     <div className={`${className} flex flex-col gap-3 h-full mt-6`}>
+        {/* Search Bar */}
         <Input className="w-full h-14 mb-1 shadow-inner " placeholder="Search..." onChange={handleSearch} />
+
         <Shuffle className="self-end text-white" onClick={handleShuffle}/>
+
         <div className="flex flex-col gap-4">
 
             {/* If filtered pokemon is empty return h1 saying no results found */}
@@ -56,8 +59,12 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
                         <AvatarImage 
                             src=""
                             alt={pokemon.name}
+                            className=""
                             />
-                        <AvatarFallback className="uppercase">{pokemon.name.charAt(0) + pokemon.name.charAt(1)}</AvatarFallback>
+                        <AvatarFallback 
+                            className="uppercase bg-blue-200">
+                            {pokemon.name.charAt(0) + pokemon.name.charAt(1)}
+                        </AvatarFallback>
                     </Avatar>
 
                     <h3 className="text-xl capitalize">{pokemon.name}</h3>
