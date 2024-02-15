@@ -84,9 +84,9 @@ export default function SearchList({className}) {
         <div className="flex flex-col gap-4">
             {/* for pokemon in pokemon */}
             {pokemon.slice(0,5).map(poke => (
-                <Card key={pokemon.id} className="p-2 flex justify-between items-center shadow-lg hover:scale-105">
+                <Card key={poke.id} className="p-2 flex justify-between items-center shadow-lg hover:scale-105">
                     <Avatar className="size size-8">
-                        <AvatarImage src="h-fit" />
+                        <AvatarImage src="" />
                         <AvatarFallback>PK</AvatarFallback>
                     </Avatar>
                     <h3 className="text-xl ">{poke.name}</h3>
