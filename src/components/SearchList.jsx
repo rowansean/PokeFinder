@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input"
 import { Card } from "./ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Shuffle } from "lucide-react"
 
 import { useState, useEffect } from "react";
 
@@ -22,6 +23,11 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
         setFeaturedPokemon(pokemon);
     }
 
+    const handleShuffle = () => {
+        const randomIndex = Math.floor(Math.random() * pokemonList.length);
+        setFeaturedPokemon(pokemonList[randomIndex]);
+    }
+
     // Filter pokemon based on search
     const filteredPokemon = pokemonList.filter(pokemon => {
         return pokemon.name.toLowerCase().includes(search.toLowerCase());
@@ -31,7 +37,8 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
 
   return (
     <div className={`${className} flex flex-col gap-3 h-full mt-6`}>
-        <Input className="w-full h-14 mb-5 shadow-inner " placeholder="Search..." onChange={handleSearch} />
+        <Input className="w-full h-14 mb-1 shadow-inner " placeholder="Search..." onChange={handleSearch} />
+        <Shuffle className="self-end text-white" onClick={handleShuffle}/>
         <div className="flex flex-col gap-4">
             {/* for pokemon in pokemon */}
             {/* If filtered pokemon is empty return h1 saying no results found */}
