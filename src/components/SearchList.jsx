@@ -31,14 +31,16 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
 
   return (
     <div className={`${className} flex flex-col gap-3 h-full mt-6`}>
-        <Input className="w-full h-14 mb-5 shadow-inner" placeholder="Search..." onChange={handleSearch} />
+        <Input className="w-full h-14 mb-5 shadow-inner " placeholder="Search..." onChange={handleSearch} />
         <div className="flex flex-col gap-4">
             {/* for pokemon in pokemon */}
+            {/* If filtered pokemon is empty return h1 saying no results found */}
+            {filteredPokemon.length === 0 && <h1 className="text-center text-white">No results found. Boooo!</h1>}
             {filteredPokemon.slice(0,5).map(pokemon => (
                 <Card 
                     key={pokemon.name} 
                     onClick={() => handlePokemonClick(pokemon)}
-                    className="p-2 flex justify-between items-center shadow-lg hover:scale-105">
+                    className="p-2 flex justify-between items-center shadow-lg hover:scale-105 hover:shadow-xl">
                     <Avatar className="size size-8">
                         <AvatarImage 
                             src=""

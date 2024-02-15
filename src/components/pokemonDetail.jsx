@@ -2,6 +2,7 @@
 
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Progress } from "@/components/ui/progress"
 import {
   Card,
   CardContent,
@@ -10,6 +11,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Volume2 } from 'lucide-react';
+
 
 import { useEffect, useState } from 'react';
 
@@ -43,6 +46,7 @@ export default function PokemonDetail({ featuredPokemon }) {
       front_shiny: '',
     },
     types: [],
+    stats: [],
   });
 
   useEffect(() => {
@@ -60,19 +64,28 @@ export default function PokemonDetail({ featuredPokemon }) {
   }
   , [featuredPokemon]);
 
+  async function playCry() {
+    const cry = new Audio(`https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${pokemonDetails.id}.ogg`);
+    cry.play();
+  }
+
   return (
     <div className='flex flex-col max-h-full items-center gap-4'>
       <Avatar className='size-36 shadow-xl'>
         <AvatarImage 
-          src={pokemonDetails.sprites.front_default}
+          src={pokemonDetails.sprites.front_shiny}
           alt={pokemonDetails.name}
-          className='rounded-full bg-[#ea8c8c] size-36 border-4 border-amber-500'
+          className='rounded-full bg-[#d13a3ad9] size-36 border-4 border-amber-500'
         />
         <AvatarFallback>{pokemonDetails.id}</AvatarFallback>
       </Avatar>
 
-      <Card className='bg-[#c63939] w-80 border-none p-3 shadow-inner '>
-          <CardTitle className="text-white capitalize m-1">{pokemonDetails.name}</CardTitle>
+      <Card className='bg-[#d13a3ad9] w-80 h-72 border-none p-4 shadow-inner overflow overflow-y-auto'>
+          <CardTitle 
+            className="text-white capitalize m-1 flex gap-2">
+            {pokemonDetails.name}
+            <Volume2 className='text-slate-100' onClick={playCry}/>
+          </CardTitle>
           {pokemonDetails.types.map((type, index) => (
             <Badge 
               key={index}
@@ -81,30 +94,25 @@ export default function PokemonDetail({ featuredPokemon }) {
             </Badge>
           ))}
           <div className='text-black text-left'>
-            <h3 className='text-lg font-semibold'>Base Stats</h3>
-            <div className='bg-[#ffffff] shadow-inner rounded-md p-4'>
-              <ul className=''>
-                <li>
-                  <span className='font-bold'>HP:</span> 100
+          <h3 className='text-lg font-semibold'>Base Stats</h3>
+          <div className='bg-[#ffffff] shadow-inner rounded-md p-4'>
+            <ul className='list-outside text-sm'>
+              {pokemonDetails.stats.slice(0,6).map((stat, index) => (
+                <li key={index} className='flex justify-between items-center gap-1'>
+                  {/* Allocate space for the stat name */}
+                  <span className='flex-1 text-md'>{stat.stat.name}</span>
+                  {/* Progress bar container with a fixed or flexible width */}
+                  <div className='flex-auto'>
+                    <Progress className="w-full" value={stat.base_stat} />
+                  </div>
+                  {/* Display the stat value, optionally in a fixed-width container for alignment */}
+                  <span className='w-12 text-right'>{stat.base_stat}</span>
                 </li>
-                <li>
-                  <span className='font-bold'>Attack:</span> 80
-                </li>
-                <li>
-                  <span className='font-bold'>Defense:</span> 70
-                </li>
-                <li>
-                  <span className='font-bold'>Special Attack:</span> 90
-                </li>
-                <li>
-                  <span className='font-bold'>Special Defense:</span> 80
-                </li>
-                <li>
-                  <span className='font-bold'>Speed:</span> 110
-                </li>
-              </ul>
-            </div>
+              ))}
+            </ul>
           </div>
+</div>
+
       </Card>
     </div>
   );
