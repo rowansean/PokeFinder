@@ -22,7 +22,7 @@ export default function Home() {
   }, []); // Empty dependency array means this effect runs once on mount
 
   return (
-    <main className="flex flex-col max-h-full md:grid md:grid-cols-2">
+    <main className="flex flex-col max-h-full md:grid md:grid-cols-2 md:gap-5">
       { featuredPokemon ?
         <PokemonDetail featuredPokemon={featuredPokemon}/>
         : <Welcome className=""/>
