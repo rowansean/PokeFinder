@@ -69,7 +69,7 @@ export default function SearchList({className, pokemonList, setFeaturedPokemon})
 
                     <h3 className="text-xl capitalize">{pokemon.name}</h3>
                     
-                    <img src="./pokeball.png" alt="pokeball" className="w-8 h-8" />
+                    <img src="/PokeBall.png" alt="pokeball" className="w-8 h-8" />
                 </Card>
             ))}
 
