@@ -18,12 +18,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="h-screen w-screen flex flex-col gap-5 justify-center items-center">
-        <Logo className="scale-150 animate-bounce" />
-        <Card className="h-[500px] w-[800px] bg-red-500 border-black border-4 shadow-2xl">
-          <CardContent className="h-full">
-            {children}
-          </CardContent>
+      <body className="min-h-screen flex flex-col gap-5 justify-center items-center">
+        <Logo className="scale-150 animate-bounce pt-16" />
+        <Card className=" bg-red-500 border-black border-4 shadow-2xl mb-10">
+          <CardContent className="h-full">{children}</CardContent>
         </Card>
       </body>
     </html>
